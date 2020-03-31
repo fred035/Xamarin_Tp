@@ -15,7 +15,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
         <ContentView BackgroundColor="#58B0F0" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
@@ -28,13 +29,24 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <!--<Label Grid.Row="0" Grid.Column="0" TextColor="White" Text="Nouveau" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>-->
-                <Image Grid.Row="0" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module5-TP02.Images.pencil.png}" VerticalOptions="Fill" HorizontalOptions="Fill"></Image>
-                <Label Grid.Row="0" Grid.Column="1" TextColor="White" Text="Accueil" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                <Label Grid.Row="0" Grid.Column="2" TextColor="White" Text="Rechercher" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <ImageButton Grid.Row="0" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module5-TP02.Images.pencil.png}" VerticalOptions="Fill" HorizontalOptions="Fill"></ImageButton>
+                <Label Grid.Row="0" Grid.Column="1" TextColor="White" Text="Accueil" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                <ImageButton Grid.Row="0" Grid.Column="2" Source="{utils:ImageFromResources Xamarin-Module5-TP02.Images.search.png}"></ImageButton>
             </Grid>
         </ContentView>
         <ContentView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <StackLayout>
+                <Label Text="Connexion à twitter" TextColor="Gray" HorizontalOptions="CenterAndExpand"></Label>
+                <Entry Placeholder="Identifiant twitter" HorizontalOptions="FillAndExpand"/>
+                <Entry Placeholder="Mot de passe" IsPassword="True" HorizontalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Horizontal">
+                    <Switch/>
+                    <Label Text="Mémoriser mes informations" TextColor="Gray" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <Button Text="SE CONNECTER" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </ContentView>
+        <ContentView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
             <ScrollView HorizontalOptions="FillAndExpand">
                 <ContentView HorizontalOptions="FillAndExpand">
                     <Grid HorizontalOptions="FillAndExpand">
@@ -44,8 +56,9 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <ContentView  HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
                             <Grid  HorizontalOptions="FillAndExpand">
@@ -59,7 +72,7 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <ContentView BackgroundColor="Black" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
+                                <Image Source="https://picsum.photos/50/50/?random.jpg" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
                                 <Label Text="Antoine" Grid.Row="0" Grid.Column="1"></Label>
                                 <Label Text="@AntoineTweet" Grid.Row="0" Grid.Column="2"></Label>
                                 <Label Text="50s" TextColor="Gray" Grid.Row="0" Grid.Column="3"></Label>
@@ -67,14 +80,14 @@
 convallis dolor. Quisque ultricies porttitor nunc venenatis facilisis." Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></Label>
                             </Grid>
                         </ContentView>
-                        <Label Grid.Row="1" Grid.Column="0" TextColor="Black" Text="Répondre" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                        <Label Grid.Row="1" Grid.Column="1" TextColor="Black" Text="Retweet" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                        <Label Grid.Row="1" Grid.Column="2" TextColor="Black" Text="Favoris" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                        <ImageButton Grid.Row="1" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module5-TP02.Images.reply.png}"></ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="1" Source="{utils:ImageFromResources Xamarin-Module5-TP02.Images.retweet.png}"></ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="2" Source="{utils:ImageFromResources Xamarin-Module5-TP02.Images.favorite.png}"></ImageButton>
                     </Grid>
                 </ContentView>
             </ScrollView>
         </ContentView>
-        <ContentView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+        <ContentView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
             <StackLayout Orientation="Horizontal">
                 <Label TextColor="Gray" Text="Fil" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
                 <Label TextColor="Gray" Text="Notification" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
