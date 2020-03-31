@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ENI_Xamarin_30032020.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace ENI_Xamarin_30032020
         public MainPage()
         {
             InitializeComponent();
+            //this.BindingContext = new MainPageViewModel();
         }
     }
 }

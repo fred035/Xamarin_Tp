@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ENI_Xamarin_30032020.Views.TweetsView"
+             xmlns:utils="clr-namespace:ENI_Xamarin_30032020.Utils"
+             BindingContext="{Binding TweetsViewModel, Source={StaticResource Locator}}">
+
+    <ScrollView HorizontalOptions="FillAndExpand">
+
+    </ScrollView>
+</ContentView>

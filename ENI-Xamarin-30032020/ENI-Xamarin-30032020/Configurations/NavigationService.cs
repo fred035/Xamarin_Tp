@@ -9,6 +9,30 @@ namespace ENI_Xamarin_30032020.Configurations
 {
     public class NavigationService : INavigationService
     {
+        private static NavigationService _instance;
+        static readonly object instanceLock = new object();
+
+        private NavigationService()
+        {
+
+        }
+
+        public static NavigationService Instance
+        {
+            get
+            {
+                if (_instance == null) 
+                {
+                    lock (instanceLock)
+                    {
+                        if (_instance == null)
+                            _instance = new NavigationService();
+                    }
+                }
+                return _instance;
+            }
+        }
+
         private readonly Dictionary<string, Type> _pagesByKey = new Dictionary<string, Type>();
         private NavigationPage _navigation;
 

@@ -12,7 +12,8 @@ namespace ENI_Xamarin_30032020.Configurations
     {
         public enum Pages
         {
-            MainPage
+            MainPage,
+            TweetsPage
         }
 
         public ViewModelLocator()
@@ -21,12 +22,14 @@ namespace ENI_Xamarin_30032020.Configurations
 
             SimpleIoc.Default.Register<INavigationService>(() =>
             {
-                var navigationService = new NavigationService();
+                var navigationService = NavigationService.Instance;
                 navigationService.Configure(Pages.MainPage.ToString(), typeof(MainPage));
+                navigationService.Configure(Pages.TweetsPage.ToString(), typeof(TweetsPage));
                 return navigationService;
             });
 
             SimpleIoc.Default.Register<MainPageViewModel>();
+            SimpleIoc.Default.Register<ConnectionViewViewModel>();
         }
 
 
@@ -37,5 +40,14 @@ namespace ENI_Xamarin_30032020.Configurations
                 return ServiceLocator.Current.GetInstance<MainPageViewModel>();
             }
         }
+
+        public ConnectionViewViewModel ConnectionViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ConnectionViewViewModel>();
+            }
+        }
+        
     }
 }
