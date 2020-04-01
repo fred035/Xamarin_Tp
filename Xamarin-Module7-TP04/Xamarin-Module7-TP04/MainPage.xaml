@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:utils="clr-namespace:Xamarin_Module6_TP03.Utils"
+             xmlns:utils="clr-namespace:Xamarin_Module7_TP04.Utils"
              mc:Ignorable="d"
-             x:Class="Xamarin_Module6_TP03.MainPage">
+             x:Class="Xamarin_Module7_TP04.MainPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -29,9 +29,9 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <ImageButton Grid.Row="0" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module6-TP03.Images.pencil.png}" VerticalOptions="Fill" HorizontalOptions="Fill"></ImageButton>
+                <ImageButton Grid.Row="0" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module7-TP04.Images.pencil.png}" VerticalOptions="Fill" HorizontalOptions="Fill"></ImageButton>
                 <Label Grid.Row="0" Grid.Column="1" TextColor="White" Text="Accueil" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                <ImageButton Grid.Row="0" Grid.Column="2" Source="{utils:ImageFromResources Xamarin-Module6-TP03.Images.search.png}"></ImageButton>
+                <ImageButton Grid.Row="0" Grid.Column="2" Source="{utils:ImageFromResources Xamarin-Module7-TP04.Images.search.png}"></ImageButton>
             </Grid>
         </ContentView>
         <ContentView x:Name="connectionForm" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
@@ -81,9 +81,9 @@
 convallis dolor. Quisque ultricies porttitor nunc venenatis facilisis." Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></Label>
                             </Grid>
                         </ContentView>
-                        <ImageButton Grid.Row="1" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module6-TP03.Images.reply.png}"></ImageButton>
-                        <ImageButton Grid.Row="1" Grid.Column="1" Source="{utils:ImageFromResources Xamarin-Module6-TP03.Images.retweet.png}"></ImageButton>
-                        <ImageButton Grid.Row="1" Grid.Column="2" Source="{utils:ImageFromResources Xamarin-Module6-TP03.Images.favorite.png}"></ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module7-TP04.Images.reply.png}"></ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="1" Source="{utils:ImageFromResources Xamarin-Module7-TP04.Images.retweet.png}"></ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="2" Source="{utils:ImageFromResources Xamarin-Module7-TP04.Images.favorite.png}"></ImageButton>
                     </Grid>
                 </ContentView>
             </ScrollView>

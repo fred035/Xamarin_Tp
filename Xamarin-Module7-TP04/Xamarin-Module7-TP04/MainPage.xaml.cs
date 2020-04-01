@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Xamarin_Module6_TP03
+namespace Xamarin_Module7_TP04
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
@@ -23,7 +23,7 @@ namespace Xamarin_Module6_TP03
 
         private void BtnConnexion_Clicked(object sender, EventArgs e)
         {
-            Console.WriteLine("btn clicked");
+            System.Diagnostics.Debug.WriteLine("btn clicked");
             String login = this.identifiant.Text;
             String password = this.motDePasse.Text;
             Boolean isRemind = this.memorise.IsToggled;

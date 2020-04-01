@@ -1,5 +1,6 @@
 ﻿using ENI_Xamarin_30032020.Views;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,8 +14,13 @@ namespace ENI_Xamarin_30032020.ViewModels
 
         public TweetsViewViewModel()
         {
+            MessengerInstance.Register<NotificationMessage>(this, NotifyMe);
         }
 
-
+        public void NotifyMe(NotificationMessage notificationMessage)
+        {
+            string notification = notificationMessage.Notification;
+            //do your work
+        }
     }
 }

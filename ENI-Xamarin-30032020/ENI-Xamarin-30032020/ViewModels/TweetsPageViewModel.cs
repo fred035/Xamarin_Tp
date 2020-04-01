@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,13 @@ namespace ENI_Xamarin_30032020.ViewModels
         public TweetsPageViewModel(INavigationService navigation)
         {
             this.navigation = navigation;
+            MessengerInstance.Register<NotificationMessage>(this, NotifyMe);
+        }
+
+        public void NotifyMe(NotificationMessage notificationMessage)
+        {
+            string notification = notificationMessage.Notification;
+            //do your work
         }
     }
 }
