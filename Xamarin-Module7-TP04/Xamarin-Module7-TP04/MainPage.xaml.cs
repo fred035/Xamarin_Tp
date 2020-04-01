@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin_Module7_TP04.Entities;
+using Xamarin_Module7_TP04.Services;
 
 namespace Xamarin_Module7_TP04
 {
@@ -13,12 +15,15 @@ namespace Xamarin_Module7_TP04
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private ITwitterService twitterService;
+
         public MainPage()
         {
             InitializeComponent();
             this.btnConnexion.Clicked += BtnConnexion_Clicked;
             this.errorLabel.IsVisible = false;
             this.tweetList.IsVisible = false;
+            this.twitterService = new TwitterServiceImpl();
         }
 
         private void BtnConnexion_Clicked(object sender, EventArgs e)
@@ -28,28 +33,11 @@ namespace Xamarin_Module7_TP04
             String password = this.motDePasse.Text;
             Boolean isRemind = this.memorise.IsToggled;
 
-            bool haveError = false;
-            StringBuilder stringBuilder = new StringBuilder();
+            String errors = this.twitterService.Authenticate(new User() { Login = login, Password = password});
 
-            if (String.IsNullOrEmpty(login) || login.Length < 3)
+            if (!String.IsNullOrEmpty(errors))
             {
-                haveError = true;
-                stringBuilder.Append("L'identifiant ne peut pas être null et doit posséder au moins 3 caractères.");
-            }
-
-            if (String.IsNullOrEmpty(password) || password.Length < 6)
-            {
-                if (haveError)
-                {
-                    stringBuilder.Append("\n");
-                }
-                haveError = true;
-                stringBuilder.Append("Le mot de passe ne peut pas être null et doit posséder au moins 6 caractères.");
-            }
-
-            if (haveError)
-            {
-                this.errorLabel.Text = stringBuilder.ToString();
+                this.errorLabel.Text = errors;
                 this.errorLabel.IsVisible = true;
             }
             else
