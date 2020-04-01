@@ -4,12 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ENI_Xamarin_30032020.TweetsPage">
+             x:Class="ENI_Xamarin_30032020.TweetsPage"
+             xmlns:views="clr-namespace:ENI_Xamarin_30032020.Views"
+             BindingContext="{Binding TweetsPageViewModel, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <views:HeaderView BackgroundColor="#58B0F0" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+            <views:TweetsView VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            <views:FooterView VerticalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

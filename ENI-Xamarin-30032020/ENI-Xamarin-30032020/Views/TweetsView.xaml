@@ -6,9 +6,12 @@
              mc:Ignorable="d"
              x:Class="ENI_Xamarin_30032020.Views.TweetsView"
              xmlns:utils="clr-namespace:ENI_Xamarin_30032020.Utils"
+             xmlns:views="clr-namespace:ENI_Xamarin_30032020.Views"
              BindingContext="{Binding TweetsViewModel, Source={StaticResource Locator}}">
 
     <ScrollView HorizontalOptions="FillAndExpand">
-
+        <StackLayout x:Name="tweetContainer" BindingContext="{Binding TweetContainer, Mode=TwoWay}">
+            <views:OneTweetView/>
+        </StackLayout>
     </ScrollView>
 </ContentView>

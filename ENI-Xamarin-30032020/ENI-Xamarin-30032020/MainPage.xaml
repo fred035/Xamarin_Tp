@@ -7,7 +7,7 @@
              x:Class="ENI_Xamarin_30032020.MainPage"
              xmlns:utils="clr-namespace:ENI_Xamarin_30032020.Utils"
              xmlns:views="clr-namespace:ENI_Xamarin_30032020.Views"
-             BindingContext="{Binding MainViewModel, Source={StaticResource Locator}}"
+             BindingContext="{Binding MainPageViewModel, Source={StaticResource Locator}}"
              >
 
     <Grid>

@@ -9,15 +9,6 @@ namespace ENI_Xamarin_30032020
 {
     public partial class App : Application
     {
-        //private static ViewModelLocator _locator;
-        //public static ViewModelLocator Locator
-        //{
-        //    get
-        //    {
-        //        return _locator ?? (_locator = new ViewModelLocator());
-        //    }
-        //}
-
         public App()
         {
             InitializeComponent();

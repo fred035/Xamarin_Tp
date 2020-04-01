@@ -29,15 +29,29 @@ namespace ENI_Xamarin_30032020.Configurations
             });
 
             SimpleIoc.Default.Register<MainPageViewModel>();
+            SimpleIoc.Default.Register<TweetsPageViewModel>();
+
             SimpleIoc.Default.Register<ConnectionViewViewModel>();
+            SimpleIoc.Default.Register<FooterViewViewModel>();
+            SimpleIoc.Default.Register<HeaderViewViewModel>();
+            SimpleIoc.Default.Register<OneTweetViewViewModel>();
+            SimpleIoc.Default.Register<TweetsViewViewModel>();
         }
 
 
-        public MainPageViewModel MainViewModel
+        public MainPageViewModel MainPageViewModel
         {
             get
             {
                 return ServiceLocator.Current.GetInstance<MainPageViewModel>();
+            }
+        }
+
+        public TweetsPageViewModel TweetsPageViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<TweetsPageViewModel>();
             }
         }
 
@@ -48,6 +62,33 @@ namespace ENI_Xamarin_30032020.Configurations
                 return ServiceLocator.Current.GetInstance<ConnectionViewViewModel>();
             }
         }
-        
+        public FooterViewViewModel FooterViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<FooterViewViewModel>();
+            }
+        }
+        public HeaderViewViewModel HeaderViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<HeaderViewViewModel>();
+            }
+        }
+        public OneTweetViewViewModel OneTweetViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<OneTweetViewViewModel>();
+            }
+        }
+        public TweetsViewViewModel TweetsViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<TweetsViewViewModel>();
+            }
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace ENI_Xamarin_30032020
         public MainPage()
         {
             InitializeComponent();
-            //this.BindingContext = new MainPageViewModel();
         }
     }
 }
