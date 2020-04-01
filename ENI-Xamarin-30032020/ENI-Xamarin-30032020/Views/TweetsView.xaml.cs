@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Messaging;
+﻿using ENI_Xamarin_30032020.ViewModels;
+using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace ENI_Xamarin_30032020.Views
         public TweetsView()
         {
             InitializeComponent();
+        }
+
+        protected override void OnParentSet()
+        {
+            Messenger.Default.Send<GenericMessage<StackLayout>, TweetsViewViewModel>(new GenericMessage<StackLayout>(this.tweetContainer));
+            base.OnParentSet();
         }
     }
 }

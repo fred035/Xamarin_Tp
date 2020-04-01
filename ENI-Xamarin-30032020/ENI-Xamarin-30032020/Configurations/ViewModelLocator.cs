@@ -1,6 +1,7 @@
 ﻿using CommonServiceLocator;
 using ENI_Xamarin_30032020.ViewModels;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;

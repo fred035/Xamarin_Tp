@@ -14,13 +14,15 @@ namespace ENI_Xamarin_30032020.ViewModels
 
         public TweetsViewViewModel()
         {
-            MessengerInstance.Register<NotificationMessage>(this, NotifyMe);
+            Messenger.Default.Register<GenericMessage<StackLayout>>(this, NotifyMe);
         }
 
-        public void NotifyMe(NotificationMessage notificationMessage)
+        public void NotifyMe(GenericMessage<StackLayout> msg)
         {
-            string notification = notificationMessage.Notification;
-            //do your work
+            for (int i = 0; i < 10; i++)
+            {
+                msg.Content.Children.Add(new OneTweetView());
+            }
         }
     }
 }

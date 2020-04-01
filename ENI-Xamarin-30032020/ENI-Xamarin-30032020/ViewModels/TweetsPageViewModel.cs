@@ -14,13 +14,6 @@ namespace ENI_Xamarin_30032020.ViewModels
         public TweetsPageViewModel(INavigationService navigation)
         {
             this.navigation = navigation;
-            MessengerInstance.Register<NotificationMessage>(this, NotifyMe);
-        }
-
-        public void NotifyMe(NotificationMessage notificationMessage)
-        {
-            string notification = notificationMessage.Notification;
-            //do your work
         }
     }
 }
