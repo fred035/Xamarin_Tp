@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin_Module8_TP05.Entities;
 using Xamarin_Module8_TP05.Services;
+using Xamarin.Essentials;
 
 namespace Xamarin_Module8_TP05
 {
@@ -32,8 +33,14 @@ namespace Xamarin_Module8_TP05
             String login = this.identifiant.Text;
             String password = this.motDePasse.Text;
             Boolean isRemind = this.memorise.IsToggled;
+            var current = Connectivity.NetworkAccess;
 
             String errors = this.twitterService.Authenticate(new User() { Login = login, Password = password });
+
+            if (current != NetworkAccess.Internet)
+            {
+                errors = "Veuillez vous connecter à internet";
+            }
 
             if (!String.IsNullOrEmpty(errors))
             {
