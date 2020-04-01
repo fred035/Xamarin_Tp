@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ENI_Xamarin_30032020.Entities
 {
-    public class Tweet
-    {
+    public class Tweet : SQLiteEntity
+	{
 		private String identifier;
 		private DateTime creationDate;
 		private User user;
@@ -26,9 +26,7 @@ namespace ENI_Xamarin_30032020.Entities
 			get { return content; }
 			set { content = value; }
 		}
-
-
-		public User User
+		public virtual User User
 		{
 			get { return user; }
 			set { user = value; }

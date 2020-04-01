@@ -9,9 +9,46 @@
              xmlns:views="clr-namespace:ENI_Xamarin_30032020.Views"
              BindingContext="{Binding TweetsViewModel, Source={StaticResource Locator}}">
 
-    <ScrollView HorizontalOptions="FillAndExpand">
-        <StackLayout x:Name="tweetContainer" BindingContext="{Binding TweetContainer, Mode=TwoWay}">
-            <views:OneTweetView/>
-        </StackLayout>
-    </ScrollView>
+    <ListView ItemsSource="{Binding Tweets}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <ContentView  HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                            <Grid  HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Image Source="https://picsum.photos/50/50/?random.jpg" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
+                                <Label Text="{Binding User.Login, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"></Label>
+                                <Label Text="{Binding User.Pseudo, Mode=TwoWay}" Grid.Row="0" Grid.Column="2"></Label>
+                                <Label Text="{Binding CreationDate, Mode=TwoWay}" TextColor="Gray" Grid.Row="0" Grid.Column="3"></Label>
+                                <Label Text="{Binding Content, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></Label>
+                            </Grid>
+                        </ContentView>
+                        <ImageButton Grid.Row="1" Grid.Column="0" Source="{utils:ImageFromResources ENI_Xamarin_30032020.Images.reply.png}"></ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="1" Source="{utils:ImageFromResources ENI_Xamarin_30032020.Images.retweet.png}"></ImageButton>
+                        <ImageButton Grid.Row="1" Grid.Column="2" Source="{utils:ImageFromResources ENI_Xamarin_30032020.Images.favorite.png}"></ImageButton>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentView>

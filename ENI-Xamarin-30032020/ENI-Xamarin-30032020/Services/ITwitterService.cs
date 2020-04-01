@@ -7,7 +7,7 @@ namespace ENI_Xamarin_30032020.Services
 {
     public interface ITwitterService
     {
-        bool Authenticate(User user);
+        string Authenticate(User user);
         List<Tweet> Tweets { get; }
     }
 }

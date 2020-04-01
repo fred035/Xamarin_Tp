@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ENI_Xamarin_30032020.Entities
 {
-    public class User
-    {
+    public class User : SQLiteEntity
+	{
 		private String login;
 		private String password;
 		private String pseudo;

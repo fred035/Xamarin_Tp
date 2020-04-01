@@ -21,7 +21,7 @@ namespace ENI_Xamarin_30032020.Views
 
         protected override void OnParentSet()
         {
-            Messenger.Default.Send<GenericMessage<StackLayout>, TweetsViewViewModel>(new GenericMessage<StackLayout>(this.tweetContainer));
+            Messenger.Default.Send<GenericMessage<int>, TweetsViewViewModel>(new GenericMessage<int>(1));
             base.OnParentSet();
         }
     }

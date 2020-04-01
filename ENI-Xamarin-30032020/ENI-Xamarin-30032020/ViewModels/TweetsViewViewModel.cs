@@ -1,8 +1,11 @@
-﻿using ENI_Xamarin_30032020.Views;
+﻿using ENI_Xamarin_30032020.Entities;
+using ENI_Xamarin_30032020.Services;
+using ENI_Xamarin_30032020.Views;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
 
@@ -10,18 +13,32 @@ namespace ENI_Xamarin_30032020.ViewModels
 {
     public class TweetsViewViewModel : ViewModelBase
     {
-        public StackLayout TweetContainer { get; set; }
+        private ITwitterService twitterService;
 
-        public TweetsViewViewModel()
+        private ObservableCollection<Tweet> tweets;
+
+        public ObservableCollection<Tweet> Tweets
         {
-            Messenger.Default.Register<GenericMessage<StackLayout>>(this, NotifyMe);
+            get { return tweets; }
+            set { tweets = value; }
         }
 
-        public void NotifyMe(GenericMessage<StackLayout> msg)
+        public TweetsViewViewModel(ITwitterService twitterService)
         {
-            for (int i = 0; i < 10; i++)
+            Messenger.Default.Register<GenericMessage<int>>(this, NotifyMe);
+            this.twitterService = twitterService;
+            this.tweets = new ObservableCollection<Tweet>();
+        }
+
+        public void NotifyMe(GenericMessage<int> msg)
+        {
+            if (msg.Content == 1)
             {
-                msg.Content.Children.Add(new OneTweetView());
+                var tweets = this.twitterService.Tweets;
+                foreach (var item in tweets)
+                {
+                    this.Tweets.Add(item);
+                }
             }
         }
     }
