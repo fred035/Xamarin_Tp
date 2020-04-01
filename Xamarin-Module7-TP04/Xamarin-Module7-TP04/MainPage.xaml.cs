@@ -41,20 +41,13 @@ namespace Xamarin_Module7_TP04
 
             if (String.IsNullOrEmpty(password) || password.Length < 6)
             {
-                if (haveError)
-                {
-                    stringBuilder.Append("\n");
-                }
+                stringBuilder = appendNewLine(haveError, stringBuilder);
                 haveError = true;
                 stringBuilder.Append("Le mot de passe ne peut pas être null et doit posséder au moins 6 caractères.");
             }
 
-            if (!this.twitterService.authenticate(login, password))
+            if (!haveError && !this.twitterService.authenticate(login, password))
             {
-                if (haveError)
-                {
-                    stringBuilder.Append("\n");
-                }
                 haveError = true;
                 stringBuilder.Append("Le nom ou le mot de passe est incorrect.");
             }
@@ -71,6 +64,15 @@ namespace Xamarin_Module7_TP04
                 this.connectionForm.IsVisible = false;
                 this.tweetList.IsVisible = true;
             }
+        }
+
+        private StringBuilder appendNewLine(Boolean haveError, StringBuilder stringBuilder)
+        {
+            if (haveError)
+            {
+                stringBuilder.Append("\n");
+            }
+            return stringBuilder;
         }
 
     }
