@@ -7,13 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ENI-Xamarin-30032020.UWP", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ENI-Xamarin-30032020.Android", "ENI-Xamarin-30032020\ENI-Xamarin-30032020.Android\ENI-Xamarin-30032020.Android.csproj", "{C40AB08A-98E9-430D-85C0-C14495FC5E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ENI-Xamarin-30032020", "ENI-Xamarin-30032020\ENI-Xamarin-30032020\ENI-Xamarin-30032020.csproj", "{04F9DA7E-9F80-4FA4-A0F4-6B58E35A6F7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ENI-Xamarin-30032020", "ENI-Xamarin-30032020\ENI-Xamarin-30032020\ENI-Xamarin-30032020.csproj", "{04F9DA7E-9F80-4FA4-A0F4-6B58E35A6F7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module4-TP01", "Module4-TP01", "{CAAB3FDA-352C-438E-9036-A2127F08EA59}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamrin-Module4-TP01.UWP", "Xamrin-Module4-TP01\Xamrin-Module4-TP01.UWP\Xamrin-Module4-TP01.UWP.csproj", "{6A867BD6-AB50-4D2C-AE48-A01DF3B28A42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamrin-Module4-TP01", "Xamrin-Module4-TP01\Xamrin-Module4-TP01\Xamrin-Module4-TP01.csproj", "{814951AF-54E8-4820-91C9-64CCC42EBA66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamrin-Module4-TP01", "Xamrin-Module4-TP01\Xamrin-Module4-TP01\Xamrin-Module4-TP01.csproj", "{814951AF-54E8-4820-91C9-64CCC42EBA66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module5-TP02", "Module5-TP02", "{6F57FAAE-BB3E-4248-83E1-F04493497E38}"
 EndProject
@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module5-TP02.UWP", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module5-TP02.Android", "Xamarin-Module5-TP02\Xamarin-Module5-TP02.Android\Xamarin-Module5-TP02.Android.csproj", "{18265F63-1E87-47BD-9E3E-ED41C36BAA38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module5-TP02", "Xamarin-Module5-TP02\Xamarin-Module5-TP02\Xamarin-Module5-TP02.csproj", "{EA7C483E-09E7-4B3C-B23E-02F501571632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin-Module5-TP02", "Xamarin-Module5-TP02\Xamarin-Module5-TP02\Xamarin-Module5-TP02.csproj", "{EA7C483E-09E7-4B3C-B23E-02F501571632}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module6-TP03", "Module6-TP03", "{04267023-A068-44D2-9DFA-83E6CDBB88AC}"
 EndProject
@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module6-TP03.UWP", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module6-TP03.Android", "Xamarin-Module6-TP03\Xamarin-Module6-TP03.Android\Xamarin-Module6-TP03.Android.csproj", "{F9924D97-CE1D-4EB5-99C1-1BC89C6B8B21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module6-TP03", "Xamarin-Module6-TP03\Xamarin-Module6-TP03\Xamarin-Module6-TP03.csproj", "{592473A9-171F-4C61-A322-09C8A149D8F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin-Module6-TP03", "Xamarin-Module6-TP03\Xamarin-Module6-TP03\Xamarin-Module6-TP03.csproj", "{592473A9-171F-4C61-A322-09C8A149D8F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module7-TP04", "Module7-TP04", "{6152FC07-D6E2-46B2-BFBD-9F51F14DFF65}"
 EndProject
@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module7-TP04.UWP", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module7-TP04.Android", "Xamarin-Module7-TP04\Xamarin-Module7-TP04.Android\Xamarin-Module7-TP04.Android.csproj", "{F9A7DB9C-A365-4D93-86CB-03CADEA7B235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module7-TP04", "Xamarin-Module7-TP04\Xamarin-Module7-TP04\Xamarin-Module7-TP04.csproj", "{0F181578-6F3A-4EE6-B64C-4AF1716C171A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin-Module7-TP04", "Xamarin-Module7-TP04\Xamarin-Module7-TP04\Xamarin-Module7-TP04.csproj", "{0F181578-6F3A-4EE6-B64C-4AF1716C171A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin_Module7_TP04.services;
 
 namespace Xamarin_Module7_TP04
 {
@@ -13,6 +14,7 @@ namespace Xamarin_Module7_TP04
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private ITwitterService twitterService = new TwitterService();
         public MainPage()
         {
             InitializeComponent();
@@ -47,6 +49,16 @@ namespace Xamarin_Module7_TP04
                 stringBuilder.Append("Le mot de passe ne peut pas être null et doit posséder au moins 6 caractères.");
             }
 
+            if (!this.twitterService.authenticate(login, password))
+            {
+                if (haveError)
+                {
+                    stringBuilder.Append("\n");
+                }
+                haveError = true;
+                stringBuilder.Append("Le nom ou le mot de passe est incorrect.");
+            }
+
             if (haveError)
             {
                 this.errorLabel.Text = stringBuilder.ToString();
@@ -60,5 +72,6 @@ namespace Xamarin_Module7_TP04
                 this.tweetList.IsVisible = true;
             }
         }
+
     }
 }
