@@ -10,8 +10,8 @@
 
     <StackLayout>
         <Label Text="Connexion à twitter" TextColor="Gray" HorizontalOptions="CenterAndExpand"></Label>
-        <Entry Placeholder="Identifiant twitter" HorizontalOptions="FillAndExpand"/>
-        <Entry Placeholder="Mot de passe" IsPassword="True" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Identifiant twitter" Text="{Binding User.Login, Mode=TwoWay}" HorizontalOptions="FillAndExpand"/>
+        <Entry Placeholder="Mot de passe"  Text="{Binding User.Password, Mode=TwoWay}" IsPassword="True" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal">
             <Switch/>
             <Label Text="Mémoriser mes informations" TextColor="Gray" VerticalOptions="CenterAndExpand"/>

@@ -1,4 +1,5 @@
 ﻿using CommonServiceLocator;
+using ENI_Xamarin_30032020.Services;
 using ENI_Xamarin_30032020.ViewModels;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
@@ -27,6 +28,11 @@ namespace ENI_Xamarin_30032020.Configurations
                 navigationService.Configure(Pages.MainPage.ToString(), typeof(MainPage));
                 navigationService.Configure(Pages.TweetsPage.ToString(), typeof(TweetsPage));
                 return navigationService;
+            });
+
+            SimpleIoc.Default.Register<ITwitterService>(() =>
+            {
+                return new TwitterServiceImpl();
             });
 
             SimpleIoc.Default.Register<MainPageViewModel>();

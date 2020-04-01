@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using ENI_Xamarin_30032020.Entities;
+using ENI_Xamarin_30032020.Services;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,9 @@ namespace ENI_Xamarin_30032020.ViewModels
     public class ConnectionViewViewModel
     {
         private INavigationService navigation;
+        private ITwitterService twitterService;
+
+        public User User { get; set; }
 
         public RelayCommand ConnectionClicked
         {
@@ -17,14 +22,16 @@ namespace ENI_Xamarin_30032020.ViewModels
             {
                 return new RelayCommand(() =>
                 {
+                    this.twitterService.Authenticate(User);
                     this.navigation.NavigateTo(Pages.TweetsPage.ToString());
                 });
             }
         }
 
-        public ConnectionViewViewModel(INavigationService navigation)
+        public ConnectionViewViewModel(INavigationService navigation, ITwitterService twitterService)
         {
             this.navigation = navigation;
+            this.twitterService = twitterService;
         }
     }
 }
