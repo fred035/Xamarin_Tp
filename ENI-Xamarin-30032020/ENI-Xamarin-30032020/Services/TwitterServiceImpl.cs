@@ -45,14 +45,17 @@ namespace ENI_Xamarin_30032020.Services
                 stringBuilder.Append("Le mot de passe ne peut pas être null et doit posséder au moins 6 caractères.");
             }
 
-            if (!Tweets.Select( x => x.User).Contains(user))
+            using (var db = new AppDbContext())
             {
-                if (haveError)
+                if (!db.Users.Any(x => x.Login == user.Login && x.Password == user.Password))
                 {
-                    stringBuilder.Append("\n");
+                    if (haveError)
+                    {
+                        stringBuilder.Append("\n");
+                    }
+                    haveError = true;
+                    stringBuilder.Append("L'utilisateur n'existe pas.");
                 }
-                haveError = true;
-                stringBuilder.Append("L'utilisateur n'existe pas.");
             }
 
             return stringBuilder.ToString();

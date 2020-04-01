@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin_Module8_TP05.Entities;
 
 namespace Xamarin_Module8_TP05.Services
@@ -29,30 +30,37 @@ namespace Xamarin_Module8_TP05.Services
             bool haveError = false;
             StringBuilder stringBuilder = new StringBuilder();
 
-            if (String.IsNullOrEmpty(user.Login) || user.Login.Length < 3)
+            if (Connectivity.NetworkAccess == NetworkAccess.Internet)
             {
-                haveError = true;
-                stringBuilder.Append("L'identifiant ne peut pas être null et doit posséder au moins 3 caractères.");
-            }
-
-            if (String.IsNullOrEmpty(user.Password) || user.Password.Length < 6)
-            {
-                if (haveError)
+                if (String.IsNullOrEmpty(user.Login) || user.Login.Length < 3)
                 {
-                    stringBuilder.Append("\n");
+                    haveError = true;
+                    stringBuilder.Append("L'identifiant ne peut pas être null et doit posséder au moins 3 caractères.");
                 }
-                haveError = true;
-                stringBuilder.Append("Le mot de passe ne peut pas être null et doit posséder au moins 6 caractères.");
-            }
 
-            if (!Tweets.Select(x => x.User).Any(x => x.Login == user.Login && x.Password == user.Password))
-            {
-                if (haveError)
+                if (String.IsNullOrEmpty(user.Password) || user.Password.Length < 6)
                 {
-                    stringBuilder.Append("\n");
+                    if (haveError)
+                    {
+                        stringBuilder.Append("\n");
+                    }
+                    haveError = true;
+                    stringBuilder.Append("Le mot de passe ne peut pas être null et doit posséder au moins 6 caractères.");
                 }
-                haveError = true;
-                stringBuilder.Append("L'utilisateur n'existe pas.");
+
+                if (!Tweets.Select(x => x.User).Any(x => x.Login == user.Login && x.Password == user.Password))
+                {
+                    if (haveError)
+                    {
+                        stringBuilder.Append("\n");
+                    }
+                    haveError = true;
+                    stringBuilder.Append("L'utilisateur n'existe pas.");
+                }
+            }
+            else
+            {
+                stringBuilder.Append("Pas de connexion internet.");
             }
 
             return stringBuilder.ToString();

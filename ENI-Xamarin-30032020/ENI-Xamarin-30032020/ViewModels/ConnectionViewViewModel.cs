@@ -1,4 +1,5 @@
 ﻿using ENI_Xamarin_30032020.Entities;
+using ENI_Xamarin_30032020.Models;
 using ENI_Xamarin_30032020.Services;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
@@ -10,34 +11,13 @@ using static ENI_Xamarin_30032020.Configurations.ViewModelLocator;
 
 namespace ENI_Xamarin_30032020.ViewModels
 {
-    public class ConnectionViewViewModel : INotifyPropertyChanged
+    public class ConnectionViewViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
         private INavigationService navigation;
         private ITwitterService twitterService;
 
-        private User user;
-
-        public User User
-        {
-            get { return user; }
-            set 
-            { 
-                user = value;
-                OnPropertyChanged("User");
-            }
-        }
-
+        public User User { get; } = new User();
+        public ErrorSwitch ErrorSwitch { get; } = new ErrorSwitch() { ErrorColor = "red" };
 
         public RelayCommand ConnectionClicked
         {
@@ -45,8 +25,19 @@ namespace ENI_Xamarin_30032020.ViewModels
             {
                 return new RelayCommand(() =>
                 {
-                    this.twitterService.Authenticate(User);
-                    this.navigation.NavigateTo(Pages.TweetsPage.ToString());
+                    String errors = this.twitterService.Authenticate(User);
+                    if (String.IsNullOrEmpty(errors))
+                    {
+                        this.ErrorSwitch.ErrorText = "";
+                        this.ErrorSwitch.IsErrorVisible = false;
+
+                        this.navigation.NavigateTo(Pages.TweetsPage.ToString());
+                    }
+                    else
+                    {
+                        this.ErrorSwitch.ErrorText = errors;
+                        this.ErrorSwitch.IsErrorVisible = true;
+                    }
                 });
             }
         }
@@ -55,7 +46,6 @@ namespace ENI_Xamarin_30032020.ViewModels
         {
             this.navigation = navigation;
             this.twitterService = twitterService;
-            this.user = new User();
         }
     }
 }
