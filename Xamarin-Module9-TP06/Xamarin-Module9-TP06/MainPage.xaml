@@ -21,19 +21,10 @@
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
         <ContentView BackgroundColor="#58B0F0" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
-            <Grid Margin="10, 25">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <ImageButton Grid.Row="0" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module8-TP05.Images.pencil.png}" VerticalOptions="Fill" HorizontalOptions="Fill"></ImageButton>
-                <Label Grid.Row="0" Grid.Column="1" TextColor="White" Text="Accueil" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                <ImageButton Grid.Row="0" Grid.Column="2" Source="{utils:ImageFromResources Xamarin-Module8-TP05.Images.search.png}"></ImageButton>
-            </Grid>
+            <!-- Header -->
+            <views:Header>
+                
+            </views:Header>
         </ContentView>
         <ContentView x:Name="connectionForm" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
             <StackLayout>
