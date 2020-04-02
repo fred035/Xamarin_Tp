@@ -23,7 +23,7 @@ namespace Xamarin_Module9_TP06
             this.twitterService = new TwitterServiceImpl();
         }
 
-        private void BtnConnexion_Clicked(object sender, EventArgs e)
+        private async void BtnConnexion_Clicked(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("btn clicked");
             String login = this.identifiant.Text;
@@ -51,6 +51,7 @@ namespace Xamarin_Module9_TP06
                 this.errorLabel.Text = "";
                 this.errorLabel.IsVisible = false;
                 this.connectionForm.IsVisible = false;
+                await Navigation.PushAsync(new Tweets_page());
             }
         }
     }

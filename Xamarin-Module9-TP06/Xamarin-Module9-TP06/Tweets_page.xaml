@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:utils="clr-namespace:Xamarin_Module9_TP06.Utils"
-             xmlns:views="clr-namespace:Xamarin_Module9_TP06"
              mc:Ignorable="d"
-
+             xmlns:views="clr-namespace:Xamarin_Module9_TP06"
+             xmlns:utils="clr-namespace:Xamarin_Module9_TP06.Utils"
              x:Class="Xamarin_Module9_TP06.Tweets_page">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -77,4 +77,5 @@ convallis dolor. Quisque ultricies porttitor nunc venenatis facilisis." Grid.Row
         </ContentView>
 
     </Grid>
-</ContentView>
+
+</ContentPage>

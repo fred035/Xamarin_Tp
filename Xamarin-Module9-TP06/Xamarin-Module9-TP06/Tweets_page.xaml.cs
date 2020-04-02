@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Xamarin_Module9_TP06
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Tweets_page : ContentView
+    public partial class Tweets_page : ContentPage
     {
         public Tweets_page()
         {

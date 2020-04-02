@@ -10,7 +10,7 @@ namespace Xamarin_Module9_TP06
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
