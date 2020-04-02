@@ -8,17 +8,9 @@
              xmlns:utils="clr-namespace:ENI_Xamarin_30032020.Utils"
              BindingContext="{Binding HeaderViewModel, Source={StaticResource Locator}}">
 
-    <Grid Margin="10, 25">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <ImageButton Grid.Row="0" Grid.Column="0" Source="{utils:ImageFromResources ENI_Xamarin_30032020.Images.pencil.png}" VerticalOptions="Fill" HorizontalOptions="Fill"></ImageButton>
-        <Label Grid.Row="0" Grid.Column="1" TextColor="White" Text="Accueil" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-        <ImageButton Grid.Row="0" Grid.Column="2" Source="{utils:ImageFromResources ENI_Xamarin_30032020.Images.search.png}"></ImageButton>
-    </Grid>
+    <StackLayout Margin="10, 25" Orientation="Horizontal">
+        <ImageButton Source="{utils:ImageFromResources ENI_Xamarin_30032020.Images.pencil.png}" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+        <Label TextColor="White" Text="Accueil" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <ImageButton Source="{utils:ImageFromResources ENI_Xamarin_30032020.Images.search.png}"/>
+    </StackLayout>
 </ContentView>
