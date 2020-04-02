@@ -57,7 +57,7 @@
                                 <ListView x:Name="ListeTweets">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
-                                            <ImageCell Text="{Binding Titre}" Detail="{Binding Details}" ImageSource="https://picsum.photos/50/50/?random.jpg"></ImageCell>
+                                            <ImageCell Text="{Binding User}" Detail="{Binding Data}" ImageSource="https://picsum.photos/50/50/?random.jpg"></ImageCell>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
                                 </ListView>
