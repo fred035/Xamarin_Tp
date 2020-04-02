@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:utils="clr-namespace:Xamarin_Module9_TP06.Utils"
+             xmlns:views="clr-namespace:Xamarin_Module9_TP06"
              x:Class="Xamarin_Module9_TP06.MainPage">
 
     <Grid>
@@ -88,14 +89,14 @@ convallis dolor. Quisque ultricies porttitor nunc venenatis facilisis." Grid.Row
                 </ContentView>
             </ScrollView>
         </ContentView>
+        
+        
+        <!-- Footer -->
         <ContentView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
-            <StackLayout Orientation="Horizontal">
-                <Label TextColor="Gray" Text="Fil" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                <Label TextColor="Gray" Text="Notification" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                <Label TextColor="Gray" Text="Messages" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                <Label TextColor="Gray" Text="Moi" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            </StackLayout>
+            <views:Footer>
+            </views:Footer>
         </ContentView>
+
     </Grid>
 
 
