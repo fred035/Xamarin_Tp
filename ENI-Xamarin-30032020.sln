@@ -48,6 +48,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module8-TP05", "Xamarin-Module8-TP05\Xamarin-Module8-TP05\Xamarin-Module8-TP05.csproj", "{8E3CE9C0-728E-4C80-AEE9-B2F6F0B27F53}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module9-TP06", "Module9-TP06", "{76C8FA38-E339-4C31-BFF0-6201DA185286}"
+	ProjectSection(SolutionItems) = preProject
+		EnonceTP6.txt = EnonceTP6.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin-Module9-TP06.UWP", "Xamarin-Module9-TP06\Xamarin-Module9-TP06.UWP\Xamarin-Module9-TP06.UWP.csproj", "{805631B3-1AD3-438C-BB3B-7051304D5063}"
 EndProject

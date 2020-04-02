@@ -13,7 +13,7 @@
         <Entry Placeholder="Identifiant twitter" Text="{Binding User.Login}" HorizontalOptions="FillAndExpand"/>
         <Entry Placeholder="Mot de passe"  Text="{Binding User.Password}" IsPassword="True" HorizontalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal">
-            <Switch/>
+            <Switch IsToggled="{Binding SavingValues, Mode=TwoWay}"/>
             <Label Text="Mémoriser mes informations" TextColor="Gray" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
         <Label Text="{Binding ErrorSwitch.ErrorText, Mode=OneWay}" TextColor="{Binding ErrorSwitch.ErrorColor, Mode=OneWay}" IsVisible="{Binding ErrorSwitch.IsErrorVisible, Mode=OneWay}"/>

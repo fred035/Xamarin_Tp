@@ -3,21 +3,48 @@ using ENI_Xamarin_30032020.Models;
 using ENI_Xamarin_30032020.Services;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Text.Json.Serialization;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 using static ENI_Xamarin_30032020.Configurations.ViewModelLocator;
 
 namespace ENI_Xamarin_30032020.ViewModels
 {
-    public class ConnectionViewViewModel
+    public class ConnectionViewViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
         private INavigationService navigation;
         private ITwitterService twitterService;
+        private Boolean savingValues = false;
 
         public User User { get; } = new User();
         public ErrorSwitch ErrorSwitch { get; } = new ErrorSwitch() { ErrorColor = "red" };
+
+        public Boolean SavingValues
+        {
+            get { return savingValues; }
+            set 
+            { 
+                savingValues = value;
+                OnPropertyChanged("SavingValues");
+            }
+        }
+
 
         public RelayCommand ConnectionClicked
         {
@@ -28,6 +55,8 @@ namespace ENI_Xamarin_30032020.ViewModels
                     String errors = this.twitterService.Authenticate(User);
                     if (String.IsNullOrEmpty(errors))
                     {
+                        ManageAppPropertiesSave();
+
                         this.ErrorSwitch.ErrorText = "";
                         this.ErrorSwitch.IsErrorVisible = false;
 
@@ -46,6 +75,36 @@ namespace ENI_Xamarin_30032020.ViewModels
         {
             this.navigation = navigation;
             this.twitterService = twitterService;
+            ManageAppPropertiesLoad();
+        }
+
+        private async void ManageAppPropertiesLoad()
+        {
+            Boolean haveSaved;
+            if (Boolean.TryParse(await SecureStorage.GetAsync("have_saved_auth"), out haveSaved))
+            {
+                if (haveSaved == true)
+                {
+                    var user = JsonConvert.DeserializeObject<User>(await SecureStorage.GetAsync("saved_user"));
+                    this.User.Login = user.Login;
+                    this.User.Password = user.Password;
+                    this.SavingValues = true;
+                }
+            }
+        }
+
+        private async void ManageAppPropertiesSave()
+        {
+            if (SavingValues)
+            {
+                await SecureStorage.SetAsync("have_saved_auth", Boolean.TrueString);
+                await SecureStorage.SetAsync("saved_user", JsonConvert.SerializeObject(User));
+            }
+            else
+            {
+                await SecureStorage.SetAsync("have_saved_auth", Boolean.FalseString);
+                await SecureStorage.SetAsync("saved_user", null);
+            }
         }
     }
 }
