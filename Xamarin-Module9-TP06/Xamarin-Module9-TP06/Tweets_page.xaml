@@ -53,12 +53,15 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <Image Source="https://picsum.photos/50/50/?random.jpg" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"/>
-                                <Label Text="Antoine" Grid.Row="0" Grid.Column="1"></Label>
-                                <Label Text="@AntoineTweet" Grid.Row="0" Grid.Column="2"></Label>
-                                <Label Text="50s" TextColor="Gray" Grid.Row="0" Grid.Column="3"></Label>
-                                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod
-convallis dolor. Quisque ultricies porttitor nunc venenatis facilisis." Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"></Label>
+                                
+                                <ListView x:Name="ListeTweets">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ImageCell Text="{Binding Titre}" Detail="{Binding Details}" ImageSource="https://picsum.photos/50/50/?random.jpg"></ImageCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                        
                             </Grid>
                         </ContentView>
                         <ImageButton Grid.Row="1" Grid.Column="0" Source="{utils:ImageFromResources Xamarin-Module8-TP05.Images.reply.png}"></ImageButton>
